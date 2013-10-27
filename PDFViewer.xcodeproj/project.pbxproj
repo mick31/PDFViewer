@@ -18,6 +18,10 @@
 		1483791A18197FAE003D5890 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 148378F918197FAE003D5890 /* Cocoa.framework */; };
 		1483792218197FAE003D5890 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1483792018197FAE003D5890 /* InfoPlist.strings */; };
 		1483792418197FAE003D5890 /* PDFViewerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1483792318197FAE003D5890 /* PDFViewerTests.m */; };
+		1483793E18198402003D5890 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1483793C18198401003D5890 /* MasterViewController.m */; };
+		1483793F18198402003D5890 /* MasterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1483793D18198401003D5890 /* MasterViewController.xib */; };
+		1483794418199611003D5890 /* PDFViewData.m in Sources */ = {isa = PBXBuildFile; fileRef = 1483794318199611003D5890 /* PDFViewData.m */; };
+		14837947181997B4003D5890 /* PDFViewDoc.m in Sources */ = {isa = PBXBuildFile; fileRef = 14837946181997B4003D5890 /* PDFViewDoc.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +54,14 @@
 		1483791F18197FAE003D5890 /* PDFViewerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PDFViewerTests-Info.plist"; sourceTree = "<group>"; };
 		1483792118197FAE003D5890 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1483792318197FAE003D5890 /* PDFViewerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PDFViewerTests.m; sourceTree = "<group>"; };
+		14837932181980C5003D5890 /* PDFViewer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PDFViewer.entitlements; sourceTree = "<group>"; };
+		1483793B18198401003D5890 /* MasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MasterViewController.h; path = ../MasterViewController.h; sourceTree = "<group>"; };
+		1483793C18198401003D5890 /* MasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MasterViewController.m; path = ../MasterViewController.m; sourceTree = "<group>"; };
+		1483793D18198401003D5890 /* MasterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MasterViewController.xib; path = ../MasterViewController.xib; sourceTree = "<group>"; };
+		1483794218199611003D5890 /* PDFViewData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDFViewData.h; sourceTree = "<group>"; };
+		1483794318199611003D5890 /* PDFViewData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDFViewData.m; sourceTree = "<group>"; };
+		14837945181997B4003D5890 /* PDFViewDoc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDFViewDoc.h; sourceTree = "<group>"; };
+		14837946181997B4003D5890 /* PDFViewDoc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDFViewDoc.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,9 +127,9 @@
 		148378FF18197FAE003D5890 /* PDFViewer */ = {
 			isa = PBXGroup;
 			children = (
-				1483790B18197FAE003D5890 /* AppDelegate.h */,
-				1483790C18197FAE003D5890 /* AppDelegate.m */,
-				1483790E18197FAE003D5890 /* MainMenu.xib */,
+				1483794118199526003D5890 /* Model */,
+				148379401819949B003D5890 /* GUI */,
+				14837932181980C5003D5890 /* PDFViewer.entitlements */,
 				1483791118197FAE003D5890 /* Images.xcassets */,
 				1483790018197FAE003D5890 /* Supporting Files */,
 			);
@@ -152,6 +164,30 @@
 				1483792018197FAE003D5890 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		148379401819949B003D5890 /* GUI */ = {
+			isa = PBXGroup;
+			children = (
+				1483790E18197FAE003D5890 /* MainMenu.xib */,
+				1483793B18198401003D5890 /* MasterViewController.h */,
+				1483793C18198401003D5890 /* MasterViewController.m */,
+				1483793D18198401003D5890 /* MasterViewController.xib */,
+				1483790B18197FAE003D5890 /* AppDelegate.h */,
+				1483790C18197FAE003D5890 /* AppDelegate.m */,
+			);
+			name = GUI;
+			sourceTree = "<group>";
+		};
+		1483794118199526003D5890 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1483794218199611003D5890 /* PDFViewData.h */,
+				1483794318199611003D5890 /* PDFViewData.m */,
+				14837945181997B4003D5890 /* PDFViewDoc.h */,
+				14837946181997B4003D5890 /* PDFViewDoc.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,6 +237,14 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = Keeper;
 				TargetAttributes = {
+					148378F518197FAE003D5890 = {
+						DevelopmentTeam = HS5P58XR8Q;
+						SystemCapabilities = {
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
+					};
 					1483791618197FAE003D5890 = {
 						TestTargetID = 148378F518197FAE003D5890;
 					};
@@ -230,6 +274,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1483793F18198402003D5890 /* MasterViewController.xib in Resources */,
 				1483790418197FAE003D5890 /* InfoPlist.strings in Resources */,
 				1483791218197FAE003D5890 /* Images.xcassets in Resources */,
 				1483790A18197FAE003D5890 /* Credits.rtf in Resources */,
@@ -253,7 +298,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				1483790D18197FAE003D5890 /* AppDelegate.m in Sources */,
+				14837947181997B4003D5890 /* PDFViewDoc.m in Sources */,
+				1483793E18198402003D5890 /* MasterViewController.m in Sources */,
 				1483790618197FAE003D5890 /* main.m in Sources */,
+				1483794418199611003D5890 /* PDFViewData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,11 +431,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PDFViewer/PDFViewer.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PDFViewer/PDFViewer-Prefix.pch";
 				INFOPLIST_FILE = "PDFViewer/PDFViewer-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -396,11 +448,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PDFViewer/PDFViewer.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PDFViewer/PDFViewer-Prefix.pch";
 				INFOPLIST_FILE = "PDFViewer/PDFViewer-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
